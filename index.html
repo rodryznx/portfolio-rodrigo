@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - José Rodrigo</title>
+    <!-- Conecta o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- O Sistema Solar ocupa a janela inteira e acompanha todos os capítulos. -->
+    <canvas class="paisagem" aria-hidden="true"></canvas>
+
+    <!-- MENU DE NAVEGAÇÃO FIXO NO TOPO -->
+    <header>
+        <nav class="menu">
+            <span class="logo">José Rodrigo</span>
+            <ul>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <!-- Botão para alternar entre tema claro e escuro -->
+            <button id="btn-tema" title="Alternar tema">Tema escuro</button>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        <div class="capitulos">
+        <!-- SEÇÃO 1: SOBRE MIM -->
+        <section id="sobre" class="abertura" aria-label="Sobre mim">
+
+
+            <div class="apresentacao">
+                <p class="local">Lábrea, Amazonas</p>
+                <h1>José Rodrigo<br><em>Alves de Almeida</em></h1>
+                <p>Nasci em Manaus e hoje moro em Lábrea. Estudo Ciência da Computação e Engenharia de Software. Gosto de criar páginas para a web e entender como os bancos de dados organizam informações.</p>
+                <p>Fora dos estudos, jogo xadrez online, leio webtoons e acompanho futebol. Também gosto de jogos digitais.</p>
+                <a class="atalho" href="#portfolio">Ver meus projetos <span aria-hidden="true">↓</span></a>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: FORMAÇÃO -->
+        <section id="formacao" class="secao">
+            <h2>Formação</h2>
+            <div class="card">
+                <h3>Bacharelado em Ciência da Computação</h3>
+                <p>Centro Universitário Internacional UNINTER — Em andamento</p>
+            </div>
+            <div class="card">
+                <h3>Bacharelado em Engenharia de Software</h3>
+                <p>Centro Universitário Internacional UNINTER — Em andamento</p>
+            </div>
+            <div class="card">
+                <h3>Conhecimentos Técnicos e Idiomas</h3>
+                <p><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript, Python, SQL e Bancos NoSQL (MongoDB e Neo4j).</p>
+                <p><strong>Idiomas:</strong> Português (Nativo) e Inglês técnico para leitura de documentação.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: PORTFÓLIO -->
+        <section id="portfolio" class="secao">
+            <h2>Portfólio</h2>
+            <p>Trabalhos que desenvolvi durante os cursos.</p>
+            
+            <div class="grid-portfolio">
+                <div class="card">
+                    <h3>Currículo Online Responsivo</h3>
+                    <p>Site desenvolvido com HTML5, CSS3 puro e JavaScript com validação de formulário e seletor de tema.</p>
+                    <a href="#sobre" class="btn-link">Voltar à apresentação</a>
+                </div>
+
+                <div class="card">
+                    <h3>Modelagem de Dados NoSQL</h3>
+                    <p>Estruturação e consulta de bancos de dados orientados a grafos utilizando Neo4j e documentos com MongoDB.</p>
+
+                </div>
+
+                <div class="card">
+                    <h3>Lógica e Algoritmos em Python</h3>
+                    <p>Scripts para automação de tarefas e manipulação de estruturas de dados desenvolvidos no VS Code.</p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: CONTATO -->
+        <section id="contato" class="secao">
+            <h2>Contato</h2>
+            <p>Este formulário simula o envio de uma mensagem para a atividade de Desenvolvimento Web.</p>
+
+            <!-- Formulário obrigatório com validação via JavaScript -->
+            <form id="form-contato" novalidate>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo">
+
+                <div class="rotulo-email">
+                    <label for="email">E-mail:</label>
+                    <span class="astronauta" aria-hidden="true">
+                        <span class="traje"></span>
+                        <span class="capacete"><span class="visor"><i></i><i></i></span></span>
+                    </span>
+                </div>
+                <input type="email" id="email" placeholder="exemplo@dominio.com">
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+
+            <!-- Área onde aparecerá o aviso de erro ou sucesso -->
+            <p role="status" id="feedback-form" class="mensagem-status"></p>
+        </section>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 - José Rodrigo Alves de Almeida. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Conecta o arquivo JavaScript no final para garantir que o HTML já carregou -->
+    <script src="js/script.js"></script>
+    <script src="js/sistema-solar.js"></script>
+</body>
+</html>
+
+
+
+

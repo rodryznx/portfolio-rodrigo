@@ -1,0 +1,123 @@
+﻿@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url("../fontes/barlow-semi-condensed-600.ttf") format("truetype");
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: "DM Sans";
+    src: url("../fontes/dm-sans-400.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+}
+/* Tons de violeta e azul ligam os painéis à paisagem espacial. */
+:root {
+    --papel: #f4f2fa;
+    --tinta: #211e39;
+    --suave: #4d4b65;
+    --acento: #54439a;
+    --linha: #c9c6db;
+    --campo: #fcfbff;
+    --erro: #87392e;
+    --largura: 72rem;
+}
+body.tema-escuro {
+    color-scheme: dark;
+    --papel: #17162c;
+    --tinta: #f4f2fa;
+    --suave: #cecae2;
+    --acento: #c4b5ff;
+    --linha: #514e69;
+    --campo: #24233e;
+    --erro: #ffb7a4;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { margin: 0; font: 1rem/1.65 "DM Sans", "Segoe UI", sans-serif; background: var(--papel); color: var(--tinta); }
+p, h1, h2, h3 { margin: 0; }
+p + p { margin-top: .65rem; }
+a { color: inherit; text-underline-offset: .28em; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+header { position: sticky; top: 0; z-index: 5; background: var(--papel); border-bottom: 1px solid var(--linha); }
+.menu, .secao, footer p { width: min(calc(100% - 3rem), var(--largura)); margin: auto; }
+.menu { min-height: 4.25rem; display: flex; align-items: center; gap: 2rem; }
+.logo { font: 600 1.55rem "Barlow Semi Condensed", sans-serif; margin-right: auto; }
+.menu ul { display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
+.menu a { text-decoration: none; }
+.menu a:hover { text-decoration: underline; }
+#btn-tema { color: var(--tinta); background: transparent; border: 1px solid var(--linha); padding: .3rem .8rem; border-radius: 2rem; }
+.local { font-size: .86rem; letter-spacing: .08em; }
+h1, h2, h3 { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 600; }
+h1 { margin: 1.2rem 0 1.5rem; font-size: clamp(2.75rem,6.6vw,6rem); line-height: .98; letter-spacing: -.025em; }
+h1 em { font-style: normal; color: #e2e6d6; }
+.apresentacao p { max-width: 29rem; }
+.atalho { display: inline-flex; align-items: center; gap: 1.1rem; margin-top: 1.6rem; }
+h2 { font-size: clamp(2.1rem,4vw,4rem); line-height: 1.1; letter-spacing: -.02em; grid-column: 1; }
+.card + .card { margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid var(--linha); }
+h3 { font-size: clamp(1.4rem,2.3vw,2rem); line-height: 1.2; margin-bottom: .45rem; }
+.secao p { color: var(--suave); }
+.grid-portfolio, form { margin-top: 1.5rem; }
+.btn-link { display: inline-block; margin-top: .6rem; color: var(--acento); }
+form { display: grid; gap: .45rem; }
+input, textarea { width: 100%; padding: .7rem; color: var(--tinta); background: var(--campo); border: 1px solid var(--linha); border-radius: .2rem; margin-bottom: .7rem; }
+textarea { resize: vertical; }
+.btn-enviar { justify-self: start; padding: .6rem 1.4rem; background: var(--acento); color: var(--papel); border: none; border-radius: .2rem; }
+.mensagem-status:not(:empty) { margin-top: 1rem; }
+footer { padding: 2rem 0; color: var(--suave); font-size: .9rem; }
+
+
+
+/* Um céu violeta permanece visível mesmo sem Canvas. */
+body { background: radial-gradient(ellipse at 75% 35%, #322657, #080b20 65%) fixed; }
+.paisagem { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+header { background: color-mix(in srgb, var(--papel) 94%, transparent); }
+main, footer { position: relative; }
+.capitulos { width: min(100% - 3rem, var(--largura)); margin: auto; }
+.abertura {
+    min-height: calc(100svh - 4.25rem); display: flex; align-items: center;
+    color: #fff9e7; position: relative; isolation: isolate;
+}
+.abertura::before {
+    content: ""; position: absolute; z-index: -1; inset: 0 0 0 min(-2rem, calc((100% - 100vw) / 2));
+    background: linear-gradient(90deg, #0a0c21eb, #100f2bc9 28%, #11102b63 49%, transparent 78%);
+    pointer-events: none;
+}
+.apresentacao { width: min(100%, 35rem); padding: 4rem 0; }
+h1 { font-size: clamp(3.1rem,6.5vw,6rem); }
+h1 em { font-style: normal; color: #d6ccff; }
+.secao {
+    margin: 15vh 0; padding: clamp(1.5rem,4vw,3.5rem); width: min(100%, 39rem);
+    background: color-mix(in srgb, var(--papel) 94%, transparent);
+    border-top: 2px solid var(--acento); box-shadow: 0 1rem 4rem #15241c33;
+}
+#portfolio { margin-left: auto; }
+.secao h2 { margin-bottom: 1.6rem; }
+.menu a[aria-current] { text-decoration: underline; }
+footer { background: var(--papel); }
+@media (max-width: 760px) {
+    .menu { flex-wrap: wrap; justify-content: space-between; gap: .3rem; padding: .5rem 0; }
+    .menu ul { order: 1; width: 100%; justify-content: space-between; gap: .3rem; font-size: .9rem; }
+    html { scroll-padding-top: 6rem; }
+    .capitulos { width: calc(100% - 2rem); }
+    .abertura { align-items: flex-end; }
+    .abertura::before { inset: 0 -1rem; background: linear-gradient(0deg,#0a0b20fa 8%,#100e29df 54%,#100e2920 90%); }
+    .apresentacao { padding: 30vh .4rem 2.5rem; }
+    .secao { margin-block: 12vh; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+
+
+/* O astronauta responde ao foco por teclado, mouse ou toque. */
+.rotulo-email { display: flex; justify-content: space-between; align-items: flex-end; }
+.astronauta { position: relative; width: 58px; height: 58px; margin-right: .4rem; pointer-events: none; }
+.capacete { position: absolute; top: 1px; left: 6px; width: 46px; height: 42px; border: 2px solid #565477; border-radius: 47%; background: linear-gradient(130deg,#fff 22%,#d6d8ed 70%,#9298bb); }
+.visor { position: absolute; inset: 7px 4px 5px; border-radius: 46%; display: flex; gap: 8px; align-items: center; justify-content: center; background: linear-gradient(140deg,#557491,#252843 64%); box-shadow: inset 2px 2px 0 #96bad4; }
+.visor i { width: 5px; height: 8px; background: #efffff; border-radius: 60%; transition: transform .18s, width .18s; }
+#form-contato:has(#email:focus) .visor i { width: 7px; transform: scaleY(.23); }
+.traje { position: absolute; bottom: 0; left: 9px; width: 40px; height: 24px; background: linear-gradient(110deg,#aeacc8,#f1eef9 45%,#b7bdd5); border: 2px solid #565477; border-radius: 45% 45% 22% 22%; }
+.traje::after { content: ""; position: absolute; bottom: 3px; left: 10px; width: 11px; height: 5px; border-radius: 2px; background: linear-gradient(90deg,#6a608a 60%,#dda965 60%); }
+@media (prefers-reduced-motion: reduce) { .visor i { transition: none; } }
+
